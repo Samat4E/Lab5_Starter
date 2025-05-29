@@ -4,5 +4,5 @@
 Samson Gebrekidan 
 
 **GitHub Pages Links**:
-- [expose.html](https://your-username.github.io/your-repo-name/expose.html)
-- [explore.html](https://your-username.github.io/your-repo-name/explore.html)
+- [expose.html](http://127.0.0.1:5500/expose.html)
+- [explore.html](http://127.0.0.1:5500/explore.html)
