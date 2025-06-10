@@ -12,7 +12,14 @@ function init() {
 
   function populateVoices() {
     voices = synth.getVoices();
-    voiceSelect.innerHTML = '<option value="select" disabled selected>Select Voice:</option>';
+
+    if (voices.length === 0) {
+      // Voices not loaded yet
+      setTimeout(populateVoices, 100);
+      return;
+    }
+
+    voiceSelect.innerHTML = '<option value="" disabled selected>Select Voice:</option>';
     voices.forEach((voice, index) => {
       const option = document.createElement('option');
       option.textContent = `${voice.name} (${voice.lang})`;
@@ -21,20 +28,20 @@ function init() {
     });
   }
 
-  // Populate voices when available
-  if (speechSynthesis.onvoiceschanged !== undefined) {
-    speechSynthesis.onvoiceschanged = populateVoices;
+  // Force voice load on some browsers
+  populateVoices();
+  if (typeof synth.onvoiceschanged !== 'undefined') {
+    synth.onvoiceschanged = populateVoices;
   }
 
-  // Button click event: speak text
   speakButton.addEventListener('click', () => {
-    const text = textInput.value;
+    const text = textInput.value.trim();
     const selectedIndex = voiceSelect.value;
 
-    if (selectedIndex === 'select' || text.trim() === '') return;
+    if (selectedIndex === '' || !text) return;
 
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.voice = voices[selectedIndex];
+    utterance.voice = voices[parseInt(selectedIndex)];
     synth.speak(utterance);
   });
 }
