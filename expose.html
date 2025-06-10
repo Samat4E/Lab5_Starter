@@ -27,29 +27,19 @@
       <header>
         <h2>Expose - Party Horn</h2>
       </header>
-
-      <!-- Horn Image -->
-      <img id="horn-image" src="assets/images/no-image.png" alt="No image selected" />
-
-      <!-- Horn Selector -->
+      <img src="assets/images/no-image.png" alt="No image selected" />
       <select name="horn" id="horn-select">
         <option value="select" disabled selected>Select Horn:</option>
         <option value="air-horn">Air Horn</option>
         <option value="car-horn">Car Horn</option>
         <option value="party-horn">Party Horn</option>
       </select>
-
-      <!-- Volume Control -->
       <div id="volume-controls">
         <input type="range" name="volume" id="volume" value="50" min="0" max="100" step="1" />
-        <img id="volume-icon" src="assets/icons/volume-level-2.svg" alt="Volume level 2" />
+        <img src="assets/icons/volume-level-2.svg" alt="Volume level 2" />
       </div>
-
-      <!-- Play Button -->
-      <button id="honk-btn">Play Sound</button>
-
-      <!-- Audio Element -->
-      <audio id="horn-sound" class="hidden" src=""></audio>
+      <button>Play Sound</button>
+      <audio class="hidden" src=""></audio>
     </section>
   </main>
 </body>
