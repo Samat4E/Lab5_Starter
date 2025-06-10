@@ -4,5 +4,5 @@
 Samson Gebrekidan 
 
 **GitHub Pages Links**:
-- [expose.html](http://127.0.0.1:5500/expose.html)
-- [explore.html](http://127.0.0.1:5500/explore.html)
+- [expose.html](https://samat4e.github.io/Lab5_Starter/expose.html)
+- [explore.html](https://samat4e.github.io/Lab5_Starter/explore.html)
